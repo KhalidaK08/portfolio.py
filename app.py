@@ -10,7 +10,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- MODERN WEB PORTFOLIO STYLING (MATCHING REFERENCE SITE) ---
 st.markdown("""
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
@@ -231,7 +230,7 @@ hero_col1, hero_col2 = st.columns([1.2, 0.8])
 
 with hero_col1:
     st.markdown("""
-    <div class="hero-badge">Data Analyst | Operations Specialist</div>
+    <div class="hero-badge">Data Analyst | Operations Analyst</div>
     <div class="hero-title">Turning Raw data into insights.</div>
     <div class="hero-subtitle">
         B.Sc Computer Science graduate passionate about data analytics, operations, visualization, and solving real-world business problems with data.
