@@ -10,8 +10,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- MAIN HEADING ---
-st.subheader("Data Analyst | Operations & Business Intelligence")
 
 # --- MODERN WEB PORTFOLIO STYLING ---
 st.markdown("""
