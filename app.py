@@ -4,158 +4,287 @@ import plotly.express as px
 
 # --- PAGE CONFIG ---
 st.set_page_config(
-    page_title="Data Analyst Portfolio | Khalida Khatun",
-    page_icon="📊",
-    layout="wide"
+    page_title="Khalida Khatun | Data Analyst Portfolio",
+    page_icon="⚡",
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# --- CUSTOM CSS FOR PORTFOLIO STYLING ---
+# --- MODERN DARK THEME & GLASSMORPHISM STYLING ---
 st.markdown("""
     <style>
-    .main-title {
-        font-size: 2.8rem;
-        font-weight: 700;
-        margin-bottom: 0px;
+    /* Global Page Styling */
+    .stApp {
+        background-color: #0d1117;
+        color: #e6edf3;
     }
-    .sub-title {
-        font-size: 1.2rem;
-        color: #A0AEC0;
-        margin-bottom: 25px;
+    
+    /* Custom Sidebar Styling */
+    [data-testid="stSidebar"] {
+        background-color: #161b22;
+        border-right: 1px solid #30363d;
     }
-    .card {
-        background-color: #1A202C;
-        border: 1px solid #2D3748;
-        padding: 20px;
+
+    /* Modern Card Containers */
+    .portfolio-card {
+        background: rgba(22, 27, 34, 0.7);
+        border: 1px solid #30363d;
         border-radius: 12px;
+        padding: 24px;
         margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        transition: transform 0.2s ease, border-color 0.2s ease;
     }
+    
+    .portfolio-card:hover {
+        border-color: #58a6ff;
+        transform: translateY(-2px);
+    }
+
+    /* Headings & Text */
+    .hero-title {
+        font-size: 2.8rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #58a6ff 0%, #bc8cff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 8px;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: #8b949e;
+        margin-bottom: 24px;
+    }
+
+    /* Tech Badges */
     .badge {
-        background-color: #2B6CB0;
-        color: white;
-        padding: 4px 10px;
-        border-radius: 6px;
+        display: inline-block;
+        background-color: #21262d;
+        color: #58a6ff;
+        border: 1px solid #30363d;
+        padding: 4px 12px;
+        border-radius: 20px;
         font-size: 0.85rem;
-        margin-right: 5px;
+        font-weight: 600;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+
+    .badge-purple {
+        color: #bc8cff;
+    }
+
+    /* Custom Buttons */
+    .action-btn {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, #238636 0%, #2ea043 100%);
+        color: white !important;
+        padding: 8px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
+
+    /* Divider */
+    hr {
+        border-color: #30363d;
+        margin: 30px 0;
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- NAVIGATION SIDEBAR ---
-st.sidebar.title("Navigation")
-menu = st.sidebar.radio("Go to:", ["About & Skills", "Projects Showcase", "Certifications", "Insights & Blogs", "Let's Connect"])
+# --- SIDEBAR NAVIGATION ---
+st.sidebar.markdown("### 📌 Navigation")
+menu = st.sidebar.radio(
+    "",
+    ["Profile & Skills", "Featured Projects", "Certifications", "Technical Writings", "Get In Touch"]
+)
 
-# --- SECTION 1: ABOUT & SKILLS ---
-if menu == "About & Skills":
-    st.markdown('<div class="main-title">Khalida Khatun</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-title">Data Analyst | SQL, Python, Power BI, Advanced Excel</div>', unsafe_allow_html=True)
-    
-    st.write("""
-    Passionate Data Analyst with experience turning raw transactional, operational, and customer data into actionable business insights. 
-    Skilled in writing optimized SQL queries, constructing interactive Power BI dashboards, performing EDA in Python, and modeling in Excel.
-    """)
-    
-    st.markdown("### Technical Core")
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.markdown("**SQL & Databases**")
-        st.caption("CTEs, Window Functions, Joins, Query Optimization")
-    with col2:
-        st.markdown("**Python**")
-        st.caption("Pandas, NumPy, Plotly, Streamlit, Matplotlib")
-    with col3:
-        st.markdown("**Business Intelligence**")
-        st.caption("Power BI, DAX Modeling, Data Visualization")
-    with col4:
-        st.markdown("**Spreadsheets & Tools**")
-        st.caption("Advanced Excel, Jira, GitHub, Automation Workflows")
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 💬 Connect")
+st.sidebar.markdown("[💼 LinkedIn](https://linkedin.com)", unsafe_allow_html=True)
+st.sidebar.markdown("[🐙 GitHub](https://github.com/KhalidaK08)", unsafe_allow_html=True)
+st.sidebar.markdown("📧 Khalida08786@gmail.com")
 
-# --- SECTION 2: PROJECTS SHOWCASE ---
-elif menu == "Projects Showcase":
-    st.title("📂 Featured Projects")
+# --- SECTION 1: PROFILE & SKILLS ---
+if menu == "Profile & Skills":
+    st.markdown('<div class="hero-title">Khalida Khatun</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-subtitle">Data Analyst & Operations Specialist</div>', unsafe_allow_html=True)
     
-    # Project 1: PhonePe Case Study
-    st.subheader("1. PhonePe Digital Payments Case Study")
     st.markdown("""
-    <span class="badge">Python</span><span class="badge">Streamlit</span><span class="badge">Plotly</span><span class="badge">EDA</span>
+    <div class="portfolio-card">
+        <h3>👋 About Me</h3>
+        <p style="color: #c9d1d9; line-height: 1.6;">
+            Results-driven Data Analyst with experience optimizing operations, writing complex SQL analytics queries, 
+            and building interactive dashboards. Proven track record in converting raw transactional and customer dataset insights into strategic business decisions.
+        </p>
+    </div>
     """, unsafe_allow_html=True)
+
+    st.markdown("### 🛠️ Technical Stack")
     
-    st.write("Interactive dashboard examining transaction volume trends, regional adoption metrics, and payment dynamics across Indian states.")
+    col1, col2, col3 = st.columns(3)
     
-    # Embedded PhonePe Visual
+    with col1:
+        st.markdown("""
+        <div class="portfolio-card">
+            <h4>📊 SQL & Databases</h4>
+            <span class="badge">Window Functions</span>
+            <span class="badge">CTEs</span>
+            <span class="badge">Joins & Subqueries</span>
+            <span class="badge">Query Optimization</span>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+        <div class="portfolio-card">
+            <h4>🐍 Python Analytics</h4>
+            <span class="badge badge-purple">Pandas</span>
+            <span class="badge badge-purple">NumPy</span>
+            <span class="badge badge-purple">Plotly</span>
+            <span class="badge badge-purple">Streamlit</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col3:
+        st.markdown("""
+        <div class="portfolio-card">
+            <h4>📈 BI & Visualization</h4>
+            <span class="badge">Power BI</span>
+            <span class="badge">DAX Modeling</span>
+            <span class="badge">Advanced Excel</span>
+            <span class="badge">Jira Workflows</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+# --- SECTION 2: FEATURED PROJECTS ---
+elif menu == "Featured Projects":
+    st.markdown('<div class="hero-title">Featured Projects</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-subtitle">Interactive case studies and data visualization applications.</div>', unsafe_allow_html=True)
+
+    # PROJECT 1
+    st.markdown("""
+    <div class="portfolio-card">
+        <h3>1. PhonePe Digital Payments Case Study</h3>
+        <p style="color: #8b949e;">End-to-end interactive dashboard analyzing transaction growth, payment velocity, and user adoption metrics across Indian states.</p>
+        <div>
+            <span class="badge">Python</span>
+            <span class="badge">Streamlit</span>
+            <span class="badge badge-purple">Plotly</span>
+            <span class="badge">Pandas</span>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Interactive Chart embedded inside PhonePe Project section
     data = {
         "State": ["Maharashtra", "Karnataka", "Telangana", "Tamil Nadu", "Delhi"],
         "Transactions_Cr": [120, 95, 80, 75, 60],
         "Users_Lakhs": [450, 380, 310, 290, 220]
     }
     df = pd.DataFrame(data)
-    fig = px.bar(df, x="State", y="Transactions_Cr", color="State", title="Transaction Volume by Top States (in Cr)")
+
+    fig = px.bar(
+        df, x="State", y="Transactions_Cr", color="State", 
+        template="plotly_dark", 
+        title="Transaction Volume by Region (Crores)",
+        color_discrete_sequence=px.colors.qualitative.Dark24
+    )
+    fig.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
     st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("---")
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    # Project 2: PayPal Risk & Merchant Performance Analysis
-    st.subheader("2. PayPal Risk & Merchant Performance Analysis")
+    # PROJECT 2
     st.markdown("""
-    <span class="badge">Power BI</span><span class="badge">DAX</span><span class="badge">SQL</span><span class="badge">Fintech</span>
+    <div class="portfolio-card">
+        <h3>2. PayPal Risk & Merchant Performance Analysis</h3>
+        <p style="color: #8b949e;">Interactive Power BI dashboard evaluating merchant transaction tiers, user volume distribution, and regional revenue metrics.</p>
+        <div>
+            <span class="badge">Power BI</span>
+            <span class="badge badge-purple">DAX</span>
+            <span class="badge">SQL</span>
+            <span class="badge">Fintech Analytics</span>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-    st.write("Designed a comprehensive Power BI dashboard analyzing merchant risk tiering, transaction volume distributions, and regional performance trends.")
 
-    st.markdown("---")
-
-    # Project 3: Media Catalog & Content Trend Analysis
-    st.subheader("3. Media Catalog Trend Analysis")
+    # PROJECT 3
     st.markdown("""
-    <span class="badge">Power BI</span><span class="badge">Data Modeling</span><span class="badge">Content Analytics</span>
+    <div class="portfolio-card">
+        <h3>3. Media Catalog & Content Trend Dashboard</h3>
+        <p style="color: #8b949e;">Evaluated streaming content distribution models, genre preferences, and release year trends using dynamic Power BI visual models.</p>
+        <div>
+            <span class="badge">Power BI</span>
+            <span class="badge">Data Modeling</span>
+            <span class="badge badge-purple">Excel</span>
+        </div>
+    </div>
     """, unsafe_allow_html=True)
-    st.write("Evaluated movie and TV show distribution trends, release timeline patterns, and genre ratings using dynamic Power BI visual models.")
 
 # --- SECTION 3: CERTIFICATIONS ---
 elif menu == "Certifications":
-    st.title("📜 Certifications & Credentials")
+    st.markdown('<div class="hero-title">Certifications & Training</div>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
+    
     with col1:
         st.markdown("""
-        #### Data Analytics Track
-        **Coding Ninjas** (2024 - 2025)
-        * Advanced SQL, Data Analysis, Python, Power BI.
-        """)
+        <div class="portfolio-card">
+            🎓 <h4>Data Analytics Track</h4>
+            <p style="color: #58a6ff; font-weight: 600;">Coding Ninjas (2024 - 2025)</p>
+            <p style="color: #8b949e;">Comprehensive program covering Advanced SQL, Python for Data Science, Data Visualization, and Power BI modeling.</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
     with col2:
         st.markdown("""
-        #### Technical Certifications
-        * **HackerRank**: SQL (Advanced) Certification
-        * **LinkedIn Learning**: Data Analysis & Business Intelligence
-        """)
+        <div class="portfolio-card">
+            🏆 <h4>Technical Certifications</h4>
+            <p style="color: #bc8cff; font-weight: 600;">HackerRank & LinkedIn Learning</p>
+            <ul style="color: #8b949e; padding-left: 18px;">
+                <li>SQL (Advanced) Skill Certification</li>
+                <li>Data Analysis & Business Intelligence Track</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
 
-# --- SECTION 4: INSIGHTS & BLOGS ---
-elif menu == "Insights & Blogs":
-    st.title("✍️ Technical Insights & Learning")
+# --- SECTION 4: TECHNICAL WRITINGS ---
+elif menu == "Technical Writings":
+    st.markdown('<div class="hero-title">Insights & Articles</div>', unsafe_allow_html=True)
     
-    st.markdown("### Featured Articles")
     st.markdown("""
-    * **SQL & Data**: *Understanding Window Functions (LAG, LEAD, RANK) for Event Sequencing*
-    * **Data Visualization**: *Power BI DAX Best Practices: CALCULATE and USERELATIONSHIP*
-    * **Python Automation**: *Automating Data Cleaning Workflows using Pandas*
-    * **Spreadsheet Modeling**: *Correlation Analysis of Economic Indicators in Excel*
-    """)
-
-# --- SECTION 5: LET'S CONNECT ---
-elif menu == "Let's Connect":
-    st.title("📬 Let's Connect")
-    st.write("I am open to opportunities where I can contribute, learn, and grow as a Data Analyst.")
+    <div class="portfolio-card">
+        <h4>⚡ Mastering SQL Window Functions</h4>
+        <p style="color: #8b949e;">Exploring practical use cases for LAG(), LEAD(), RANK(), and ROW_NUMBER() in transactional analytics datasets.</p>
+    </div>
     
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("""
-        * 💼 **LinkedIn**: [linkedin.com/in/your-profile](https://linkedin.com)
-        * 🐙 **GitHub**: [github.com/KhalidaK08](https://github.com/KhalidaK08)
-        * 📧 **Email**: Khalida08786@gmail.com
-        """)
-    with col2:
-        with st.form("contact_form"):
-            name = st.text_input("Your Name")
-            email = st.text_input("Your Email")
-            message = st.text_area("Your Message")
-            submitted = st.form_submit_button("Send Message")
-            if submitted:
-                st.success("Thank you for reaching out!")
+    <div class="portfolio-card">
+        <h4>📊 Optimizing Power BI Data Models using DAX</h4>
+        <p style="color: #8b949e;">A guide to managing inactive relationships with USERELATIONSHIP and writing efficient CALCULATE expressions.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# --- SECTION 5: GET IN TOUCH ---
+elif menu == "Get In Touch":
+    st.markdown('<div class="hero-title">Let\'s Connect</div>', unsafe_allow_html=True)
+    st.markdown('<div class="hero-subtitle">Open for Data Analyst roles and collaborative projects.</div>', unsafe_allow_html=True)
+
+    with st.form("contact_form"):
+        col1, col2 = st.columns(2)
+        with col1:
+            name = st.text_input("Name")
+        with col2:
+            email = st.text_input("Email")
+            
+        message = st.text_area("Message")
+        submit_button = st.form_submit_button("Send Message")
+        
+        if submit_button:
+            st.success("Thank you! Your message has been sent.")
