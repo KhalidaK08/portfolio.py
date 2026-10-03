@@ -272,7 +272,7 @@ with about_col1:
         <h3 style="margin-bottom:12px;">Tech Stack</h3>
         <p style="font-size: 0.9rem; color: #475569; margin-bottom: 18px;">Primary technical toolset applied across operational analytics projects.</p>
         <div>
-            <span class="tag">SQL (PL/SQL, MySQL, BigQuery)</span>
+            <span class="tag">SQL (MySQL, SQL server BigQuery)</span>
             <span class="tag">Python (Pandas, NumPy, Matplotlib)</span>
             <span class="tag">Power BI & DAX</span>
             <span class="tag">Advanced Excel</span>
@@ -295,7 +295,7 @@ with about_col2:
             </div>
             <div style="border-left: 2px solid #a855f7; padding-left: 14px;">
                 <h4 style="margin:0; color:#0f172a; font-size: 1.05rem;">Data Analytics Certification Track</h4>
-                <div style="color:#64748b; font-size:0.85rem; font-weight:600;">Coding Ninjas | Jan 2024 - Aug 2025</div>
+                <div style="color:#64748b; font-size:0.85rem; font-weight:600;">Coding Ninjas | Jan 2026 - Aug 2026</div>
                 <p style="margin-top:4px; font-size:0.88rem; color:#334155;">Solved 1000+ analytical and coding problems covering SQL, Python EDA, and Power BI modeling.</p>
             </div>
         </div>
@@ -312,7 +312,7 @@ with sk1:
     st.markdown("""
     <div class="light-card">
         <h4>📊 SQL & Databases</h4>
-        <p style="color:#64748b; font-size:0.85rem;">PL/SQL, MySQL, BigQuery</p>
+        <p style="color:#64748b; font-size:0.85rem;"> MySQL, SQL Server, BigQuery</p>
         <span class="tag">CTEs & Subqueries</span>
         <span class="tag">Window Functions</span>
         <span class="tag">Table Joins</span>
@@ -461,7 +461,7 @@ with cert_col1:
     st.markdown("""
     <div class="dark-card">
         <h4 style="color:#ffffff;">Coding Ninjas — Data Analytics</h4>
-        <p style="color:#818cf8; font-weight:600;">Jan 2024 - Aug 2025</p>
+        <p style="color:#818cf8; font-weight:600;">Jan 2026 - Aug 2026</p>
         <p style="color:#94a3b8; font-size:0.9rem;">1000+ Analytical & Coding Problems Solved covering SQL, Python, and Power BI.</p>
     </div>
     """, unsafe_allow_html=True)
