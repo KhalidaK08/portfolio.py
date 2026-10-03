@@ -5,7 +5,7 @@ import plotly.express as px
 # --- PAGE CONFIGURATION ---
 st.set_page_config(
     page_title="Khalida Khatun Portfolio",
-    page_icon="⚡",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -242,7 +242,7 @@ with hero_col2:
     <div style="background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(168,85,247,0.2)); border-radius: 20px; padding: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.12);">
         <h3 style="color: #ffffff; margin-bottom: 8px; font-size: 1.35rem;">Operational & Data Impact</h3>
         <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5;">
-            1+ Years Data Analyst Experience + 3 Years Support & Operations Management
+            1+ Years Data Analyst Experience + 3 Years Operations Management
         </p>
         <hr style="border-color: rgba(255,255,255,0.1); margin: 16px 0;">
         <div style="display: flex; justify-content: space-around;">
