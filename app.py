@@ -219,18 +219,37 @@ st.markdown("""
 hero_col1, hero_col2 = st.columns([1.0, 0.8])
 
 with hero_col1:
+    # 3rd Image Content (Left Section)
     st.markdown("""
-    <div class="hero-badge">Data Analyst | Operations Analyst</div>
-    <div class="hero-title">Turning Raw data into insights.</div>
-    <div class="hero-subtitle">
-        Results-driven Data Analyst with professional experience in SQL, Python, Power BI, and Advanced Excel, 
-        specializing in data extraction, validation, reporting, and workflow automation.
+    <div style="padding-right: 15px;">
+        <span style="background: rgba(99,102,241,0.2); color: #818cf8; border: 1px solid rgba(99,102,241,0.4); padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+            Data Analyst | Operations Analyst
+        </span>
+        <h1 style="font-size: 2.8rem; font-weight: 800; color: #ffffff; margin-top: 15px; margin-bottom: 15px; line-height: 1.2;">
+            Turning Raw data into insights.
+        </h1>
+        <p style="color: #94a3b8; font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px;">
+            Results-driven Data Analyst with professional experience in SQL, Python, Power BI, and Advanced Excel, 
+            specializing in data extraction, validation, reporting, and workflow automation.
+        </p>
     </div>
-    <div style="margin-bottom: 22px;">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-secondary">Download Resume</a>
-    </div>
-    <div style="margin-top: 10px;">
+    """, unsafe_allow_html=True)
+
+    # Action Buttons
+    btn_col1, btn_col2 = st.columns([1, 1.2])
+    with btn_col1:
+        st.markdown('<a href="#projects" style="display:inline-block; width:100%; text-align:center; background:#6366f1; color:white; padding:10px; border-radius:10px; text-decoration:none; font-weight:600;">View Projects</a>', unsafe_allow_html=True)
+    with btn_col2:
+        # Download Resume Logic
+        try:
+            with open("Khalida_Khatun_Resume.pdf", "rb") as file:
+                st.download_button(label="📄 Download Resume", data=file, file_name="Khalida_Khatun_Resume.pdf", mime="application/pdf", use_container_width=True)
+        except FileNotFoundError:
+            st.button("📄 Download Resume", use_container_width=True)
+
+    # Social Tags
+    st.markdown("""
+    <div style="margin-top: 20px;">
         <span class="tag">🟢 Open to Data Analyst Roles</span>
         <a href="https://linkedin.com" target="_blank" style="text-decoration:none;"><span class="tag">💼 LinkedIn</span></a>
         <a href="https://github.com/KhalidaK08" target="_blank" style="text-decoration:none;"><span class="tag">🐙 GitHub</span></a>
@@ -238,22 +257,26 @@ with hero_col1:
     </div>
     """, unsafe_allow_html=True)
 
+
 with hero_col2:
+    # 2nd Image Content (Right Section Card)
     st.markdown("""
-    <div style="background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(168,85,247,0.2)); border-radius: 20px; padding: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.12);">
-        <h3 style="color: #ffffff; margin-bottom: 8px; font-size: 1.35rem;">Operational & Data Impact</h3>
-        <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5;">
+    <div style="background: rgba(30, 27, 75, 0.4); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 20px; padding: 28px; width: 100%; margin-left: auto;">
+        <h3 style="color: #ffffff; text-align: center; margin-bottom: 10px; font-size: 1.35rem; font-weight: 700;">
+            Operational & Data Impact
+        </h3>
+        <p style="color: #94a3b8; text-align: center; font-size: 0.88rem; margin-bottom: 20px; line-height: 1.4;">
             1+ Years Data Analyst Experience + 3 Years Operations Management
         </p>
-        <hr style="border-color: rgba(255,255,255,0.1); margin: 16px 0;">
-        <div style="display: flex; justify-content: space-around;">
+        <hr style="border-color: rgba(255,255,255,0.08); margin: 18px 0;">
+        <div style="display: flex; justify-content: space-around; text-align: center;">
             <div>
-                <h2 style="color: #818cf8; margin:0; font-size: 1.8rem;">4+ Yrs</h2>
-                <span style="color:#94a3b8; font-size: 0.8rem;">Total Experience</span>
+                <h2 style="color: #818cf8; margin: 0; font-size: 2rem; font-weight: 800;">4+ Yrs</h2>
+                <span style="color: #94a3b8; font-size: 0.82rem;">Total Experience</span>
             </div>
             <div>
-                <h2 style="color: #c084fc; margin:0; font-size: 1.8rem;">100%</h2>
-                <span style="color:#94a3b8; font-size: 0.8rem;">Data Focus</span>
+                <h2 style="color: #c084fc; margin: 0; font-size: 2rem; font-weight: 800;">100%</h2>
+                <span style="color: #94a3b8; font-size: 0.82rem;">Data Focus</span>
             </div>
         </div>
     </div>
