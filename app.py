@@ -219,7 +219,6 @@ st.markdown("""
 hero_col1, hero_col2 = st.columns([1.0, 0.8])
 
 with hero_col1:
-    # 3rd Image Content (Left Section)
     st.markdown("""
     <div style="padding-right: 15px;">
         <span style="background: rgba(99,102,241,0.2); color: #818cf8; border: 1px solid rgba(99,102,241,0.4); padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
@@ -238,7 +237,7 @@ with hero_col1:
     # Action Buttons
     btn_col1, btn_col2 = st.columns([1, 1.2])
     with btn_col1:
-        st.markdown('<a href="#projects" style="display:inline-block; width:100%; text-align:center; background:#6366f1; color:white; padding:10px; border-radius:10px; text-decoration:none; font-weight:600;">View Projects</a>', unsafe_allow_html=True)
+        st.markdown('<a href="#projects" style="display:inline-block; width:100%; text-align:center; background:#6366f1; color:black; padding:10px; border-radius:10px; text-decoration:none; font-weight:600;">View Projects</a>', unsafe_allow_html=True)
     with btn_col2:
         # Download Resume Logic
         try:
@@ -259,7 +258,6 @@ with hero_col1:
 
 
 with hero_col2:
-    # 2nd Image Content (Right Section Card)
     st.markdown("""
     <div style="background: rgba(30, 27, 75, 0.4); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 20px; padding: 28px; width: 100%; margin-left: auto;">
         <h3 style="color: #ffffff; text-align: center; margin-bottom: 10px; font-size: 1.35rem; font-weight: 700;">
