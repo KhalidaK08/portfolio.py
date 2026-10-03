@@ -10,8 +10,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- MAIN HEADING (This displays on the page) ---
-st.title("Khalida Khatun")
+# --- MAIN HEADING ---
 st.subheader("Data Analyst | Operations & Business Intelligence")
 
 # --- MODERN WEB PORTFOLIO STYLING ---
