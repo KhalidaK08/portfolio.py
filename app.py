@@ -216,7 +216,7 @@ st.markdown("""
 
 
 # --- HERO SECTION ---
-hero_col1, hero_col2 = st.columns([1.35, 0.85])
+hero_col1, hero_col2 = st.columns([1.0, 0.8])
 
 with hero_col1:
     st.markdown("""
