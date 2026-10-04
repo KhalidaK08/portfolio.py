@@ -110,6 +110,53 @@ st.markdown("""
         margin-bottom: 24px;
     }
 
+/* --- FIX 1: DOWNLOAD RESUME & GENERAL BUTTONS --- */
+    div[data-testid="stDownloadButton"] > button,
+    .stButton > button {
+        background-color: #1e293b !important;
+        color: #ffffff !important;
+        border: 1px solid #334155 !important;
+        border-radius: 10px !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+    }
+
+    div[data-testid="stDownloadButton"] > button:hover,
+    .stButton > button:hover {
+        background-color: #334155 !important;
+        color: #818cf8 !important;
+        border-color: #6366f1 !important;
+    }
+
+    /* --- FIX 2: LET'S CONNECT FORM (FORM LABELS & INPUTS) --- */
+    div[data-testid="stForm"] label {
+        color: #f8fafc !important;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+    }
+
+    div[data-testid="stForm"] input, 
+    div[data-testid="stForm"] textarea {
+        color: #0f172a !important;
+        background-color: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+    }
+
+    div[data-testid="stForm"] button {
+        background: linear-gradient(135deg, #6366f1, #a855f7) !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+        border-radius: 8px !important;
+        padding: 10px 24px !important;
+    }
+
+    div[data-testid="stForm"] button:hover {
+        opacity: 0.9 !important;
+        color: #ffffff !important;
+    }
+
     /* Button Styling */
     .btn-primary {
         background: #6366f1;
