@@ -157,18 +157,6 @@ st.markdown("""
         color: #ffffff !important;
     }
 
-/* --- FULL-WIDTH LAYOUT & SECTION SPACING --- */
-.main .block-container {
-    max-width: 95% !important;
-    padding-left: 2.5rem !important;
-    padding-right: 2.5rem !important;
-}
-
-/* Push columns to opposite outer edges */
-[data-testid="stHorizontalBlock"] {
-    justify-content: space-between !important;
-    gap: 3rem !important;
-}
 
     /* Button Styling */
     .btn-primary {
