@@ -312,7 +312,7 @@ with hero_col2:
             Operational & Data Impact
         </h3>
         <p style="color: #94a3b8; text-align: center; font-size: 0.88rem; margin-bottom: 20px; line-height: 1.4;">
-            1+ Years Data Analyst Experience + 3 Years Operations Management
+            1+ Years Data Analyst Experience + 3 Years Data-Driven Operations
         </p>
         <hr style="border-color: rgba(255,255,255,0.08); margin: 18px 0;">
         <div style="display: flex; justify-content: space-around; text-align: center;">
